@@ -16,6 +16,17 @@ body {
     padding: 0;
 }
 
+h2{
+    font-size: 5vh;
+    text-align: center;
+}
+
+p{
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
 body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
@@ -31,15 +42,14 @@ body {
 .heading {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+    font-size: 8vh;
     text-align: center;
 }
-
 /*
  * Styles for the deck of cards
  */
-
 .deck {
-    width: 660px;
+    width: 76%;
     min-height: 680px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
@@ -53,19 +63,18 @@ body {
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    height: 150px;
+    width: 150px;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
-
 .deck .card.open {
     transform: rotateY(0);
     background: #02b3e4;
@@ -106,12 +115,13 @@ body {
  * Styles for the Score Panel
  */
 
-.score-panel {
-    text-align: left;
-    width: 345px;
-    margin-bottom: 10px;
-}
 
+.score-panel {
+    text-align: center;
+    width: 65%;
+    margin-bottom: 10px;
+    font-size: 2.5vh;
+}
 .score-panel .stars {
     margin: 0;
     padding: 0;
@@ -210,56 +220,64 @@ body {
 	border-radius: 5px;
 }
 
- .play-again {
-	background-color: #141214;
-	padding: 0.7rem 1rem;
-	font-size: 1.1rem;
-	display: block;
-	margin: 0 auto;
-	width: 50%;
-	font-family: 'Gloria Hallelujah', cursive;
-	color: #ffffff;
-	border-radius: 5px;
+
+
+.play-again {
+    background-color: #141214;
+    padding: 0.7rem 1rem;
+    font-size: 2.5vh;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #ffffff;
+    border-radius: 30px;
 }
-#popup2 {
-	margin: 70px auto;
-	padding: 20px;
-	background: #ffffff;
-	border-radius: 5px;
-	width: 85%;
-	position: relative;
-	transition: all 5s ease-in-out;
-	font-family: 'Gloria Hallelujah', cursive;
-}
-  
-#popup2 h2 {
-	margin-top: 0;
-	color: #333;
-	font-family: Tahoma, Arial, sans-serif;
+  #popup2 {
+    margin: 70px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    width: 90%;
+    height: 70%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
+#popup2 h2 {
+    font-size: 4vh;
+    margin-top: 50px;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
 #popup2 .close2 {
-	position: absolute;
-	top: 20px;
-	right: 30px;
-	transition: all 200ms;
-	font-size: 30px;
-	font-weight: bold;
-	text-decoration: none;
-	color: #333;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 70px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
 }
 
 #popup2 .close2:hover {
 	color: #E5F720;
 }
 
-#popup2 .content-1,
-.content-2 {
-	max-height: 30%;
-	overflow: auto;
-	text-align: center;
+#popup2 .content-1, .content-2 {
+    max-height: 35%;
+    overflow: auto;
+    text-align: center;
+    font-size: 2.5vh;
 }
-
+#userName{
+    font-size: 70px;
+    margin: 10px;
+    width: 70%;
+    border: 1px solid grey;
+}
 /* animations */
 @keyframes flipInY {
 	from {
@@ -328,43 +346,5 @@ body {
 
 	to {
 		transform: scale3d(1, 1, 1);
-	}
-}
-/****** Media queries
-***************************/
-
-
-@media (max-width: 320px) {
-	.deck {
-		width: 85%;
-	}
-
-	.deck .card {
-		height: 4.7rem;
-		width: 4.7rem;
-	}
-}
-
-
-/* For Tablets and larger screens
-****************/
-
-@media (min-width: 768px) {
-	.container {
-		font-size: 22px;
-	}
-
-	.deck {
-		width: 660px;
-		height: 680px;
-	}
-
-	.deck .card {
-		height: 125px;
-		width: 125px;
-	}
-
-	.popup {
-		width: 60%;
 	}
 }
