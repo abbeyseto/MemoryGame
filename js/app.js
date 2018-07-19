@@ -217,7 +217,7 @@ function closeModal() {
     });
 function closeuserModal() {
         modal2.removeClass("show");
-        $('h2').html("Welcome "+ userName.value);
+        $('#title').html("Welcome "+ userName.value);
         startGame();
 }
 
