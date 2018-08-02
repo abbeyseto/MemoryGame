@@ -5,6 +5,7 @@ let card = $('.card');
 
 let cards = [...card];
 
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -15,6 +16,7 @@ $(document).ready(function () {
     $('#popupUser').addClass('show');
     const userName = $('#userName');
     $('.deck').html(shuffle(cards));
+    shownow();
 })
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -62,6 +64,7 @@ $('.deck').on('click', '.card', function (e) {
 
             if (cardsMatched === 8) {
                 congratulations();
+                writenow();
             }
         } else {
             unmatched();
@@ -186,7 +189,7 @@ let closeicon2 = document.querySelector(".close2");
 // @description congratulations when all cards match, show modal and moves, time and rating
 function congratulations() {
     finalTime = timer.html();
-      clearInterval(interval);
+    clearInterval(interval);
     // show congratulations modal
     modal.addClass("show");
 
@@ -211,18 +214,64 @@ function closeModal() {
     });
 }
 
- closeicon2.addEventListener("click", function (e) {
-        modal2.removeClass("show");
-        startGame();
-    });
+closeicon2.addEventListener("click", function (e) {
+    modal2.removeClass("show");
+    startGame();
+});
 function closeuserModal() {
-        modal2.removeClass("show");
-        $('#title').html("Welcome "+ userName.value);
-        startGame();
+    modal2.removeClass("show");
+    $('#title').html("Welcome " + userName.value);
+    console.log(userName.value);
+    startGame();
 }
 
 // @desciption for user to play Again 
 function playAgain() {
     modal.removeClass("show");
     startGame();
+}
+function shownow() {
+    let url = 'http://35.232.249.82/api/v2/mgusers/_table/score?api_key=cb643d372d590978058c8830611597e5c11f81531d637b0bbd964d159bc86dbb';
+    $.ajax({
+        url: url,
+        method: 'GET',
+    }).done(displayScore).fail(function (err) {
+        throw err;
+    });
+    function displayScore(data) {
+        if (data.resource) {
+            const show = data.resource;
+            let showscore = '<tr>' + show.map(details => `<td>${details.name}</td><td>${new Date(details.time).toLocaleString()}</td><td> ${details.moves}</td></tr>`
+            ).join('');
+            $('#leadboard').find('table').append(showscore);
+        }
+    }
+}
+
+
+//***CREATE NEW PLAYER USING POST REQUEST***//
+function writenow() {
+    let newName = userName.value;
+    console.log(newName);
+    let newMoves = $('#userAge').val();
+    let date = Date();
+    let url1 = 'http://35.232.249.82/api/v2/mgusers/_table/score?api_key=cb643d372d590978058c8830611597e5c11f81531d637b0bbd964d159bc86dbb'
+    var addingNewUser = { 
+        "resource":[{
+        "name": newName,
+        "moves": moves,
+        "time": date,
+        }]
+    };
+
+    $.ajax({ // Begining of ajax query
+        url: url1, // url defined in the request statement
+        dataType: "json", // type of data to be sent via the POST method
+        method: 'POST', // POST method to send data to the API
+        data: addingNewUser, // data to se sent to the API
+    }).done(function (resp) {
+        console.log("User has been created!");
+        console.log(resp);
+    }).fail(console.log("User NOT created!"));
+
 }

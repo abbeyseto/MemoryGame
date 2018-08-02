@@ -19,6 +19,7 @@ body {
 h2{
     font-size: 5vh;
     text-align: center;
+	margin: 0 auto;
 }
 
 p{
@@ -50,7 +51,7 @@ body {
  */
 .deck {
     width: 76%;
-    min-height: 680px;
+    height: 88vw;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
@@ -63,8 +64,8 @@ body {
 }
 
 .deck .card {
-    height: 150px;
-    width: 150px;
+    height: 17vw;
+    width: 23%;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
@@ -278,6 +279,36 @@ body {
     margin: 10px;
     width: 70%;
     border: 1px solid grey;
+}
+#leadboard{
+    width: 80%;
+    background-color: lightblue;
+    border: 1px solid lightblue;
+	border-radius: 5px;
+	-webkit-box-shadow: 7px 7px 16px 1px rgba(179,166,222,0.76);
+    -moz-box-shadow: 7px 7px 16px 1px rgba(179,166,222,0.76);
+    box-shadow: 7px 7px 16px 1px rgba(179,166,222,0.76);
+	margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-left: auto;
+    padding: 20px;
+    text-align: center;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #05cbbb;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #05cbbb;
 }
 /* animations */
 @keyframes flipInY {
