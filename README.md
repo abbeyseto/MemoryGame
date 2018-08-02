@@ -2,19 +2,35 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+* [How to Play](#instructions)
+* [Dependencies](#dependencies)
 
-## Instructions
+## How to Play
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+On visiting the page, you will be asked to enter your name. This is needed to save your final scores. To play this game, Click on any two tiles and match the images. The lower your moves, the higher your rating. 
 
-To get started, open `js/app.js` and start building out the app's functionality
+Once cards are matched, the cards will be fliped till the end of the game and when all 16 cards have been matched you will see the following:
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+* Total moves made
+* Time taken to finish the game
+* Star rating of the player
 
-## Contributing
+Have fun with the Game!
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+## Dependencies
+ 
+The project was built with HTML and CSS styling to display a static version of the Memory Game project. This was then converted to an interactive one. 
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+The game is powered by a REST API at the backend to store user details which is shown in the Score Board. Ajax request are made from the API to display the Score Board, while request are sent to the backend API to store the users moves after the 16 cards have been matched.
+
+Details stored includes:
+
+* Name
+* Number of Moves
+* Date and time the game was played
+
+For specific ideas on how to improve this Game, contact me on adenleabbey@hotmail.com.
+
+I will value your honest feedback.
+
+Thank you!.
