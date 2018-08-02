@@ -231,7 +231,7 @@ function playAgain() {
     startGame();
 }
 function shownow() {
-    let url = 'https://35.232.249.82/api/v2/mgusers/_table/score?api_key=cb643d372d590978058c8830611597e5c11f81531d637b0bbd964d159bc86dbb';
+    let url = 'https://api.adenleabiodun.com/api/v2/mgusers/_table/Score?api_key=2f59dfe705aafc17a07f1dfeab9198fe2bac90f61dd79732d7ff25b1a5d9d2c7';
     $.ajax({
         url: url,
         method: 'GET',
@@ -255,7 +255,7 @@ function writenow() {
     console.log(newName);
     let newMoves = $('#userAge').val();
     let date = Date();
-    let url1 = 'https://35.232.249.82/api/v2/mgusers/_table/score?api_key=cb643d372d590978058c8830611597e5c11f81531d637b0bbd964d159bc86dbb'
+    let url1 = 'https://api.adenleabiodun.com/api/v2/mgusers/_table/Score?api_key=2f59dfe705aafc17a07f1dfeab9198fe2bac90f61dd79732d7ff25b1a5d9d2c7'
     var addingNewUser = { 
         "resource":[{
         "name": newName,
