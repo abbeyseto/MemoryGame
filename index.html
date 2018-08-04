@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Matching Game</title>
     <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
@@ -97,39 +98,38 @@
                 <div class="content-2">
                     <p>You made <span id=finalMove> </span> moves in <span id=totalTime> </span> </p>
                     <p>Your Rating: <span id=starRating></span></p>
-                </div>
-                <button id="play-again" onclick="playAgain()">
+                    <button id="play-again" onclick="playAgain()">
                     Play again 😄</a>
                 </button>
+                </div>
             </div>
         </div>
-    </div>
-    <div id='popupUser' class="overlay">
-        <div id="popup2">
-            <h2>Welcome to Abiodun's version of Cards Matcing Game. 🎉</h2>
-            <a class="close2" href=#>×</a>
-            <div class="content-1">
-                What do i call you?
-                <input id='userName' type="text" required>
+        <div id='popupUser' class="overlay">
+            <div id="popup2">
+                <h2>Welcome to Abiodun's version of Cards Matcing Game. 🎉</h2>
+                <text class="error"></text>
+                <a class="close2" href=#>×</a>    
+                <div class="content-1">
+                    <form>
+                        <h3 class="intro">What do i call you?</h3>
+                        <input id='userName' type="text" required>
+                        <button class="play-again">Submit Name 😄</button>
+                    </form>
+                </div>
             </div>
-            <button class="play-again" onclick="closeuserModal()">
-                    Submit Name 😄</a>
-                </button>
         </div>
-    </div>
-    </div>
-    </div>
-    <section id="leadboard">
-        <h2>Score Board</h2>
-        <table>
-            <tr>
-                <th>NAME</th>
-                <th>DATE/TIME</th>
-                <th>MOVES</th>
-            </tr>
-        </table>
-    </section>
-    <script src="js/app.js"></script>
+
+        <section id="leadboard">
+            <h2>Score Board</h2>
+            <table>
+                <tr>
+                    <th>NAME</th>
+                    <th>DATE/TIME</th>
+                    <th>MOVES</th>
+                </tr>
+            </table>
+        </section>
+        <script src="js/app.js"></script>
 </body>
 
 </html>

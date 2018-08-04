@@ -47,6 +47,7 @@ let counter = $(".moves");
 $('.deck').on('click', '.card', function (e) {
     $(this).addClass('open');
     $(this).addClass('show');
+    $(this).addClass('avoid-clicks');
     cardList.push(this);
 
     if (cardList.length === 2) {
@@ -65,6 +66,7 @@ $('.deck').on('click', '.card', function (e) {
             if (cardsMatched === 8) {
                 congratulations();
                 writenow();
+                cardsMatched = 0;
             }
         } else {
             unmatched();
@@ -103,8 +105,8 @@ function unmatched() {
     cardList[1].classList.add("unmatched");
     disable();
     setTimeout(function () {
-        cardList[0].classList.remove("show", "open", "unmatched");
-        cardList[1].classList.remove("show", "open", "unmatched");
+        cardList[0].classList.remove("show", "open", "avoid-clicks", "unmatched");
+        cardList[1].classList.remove("show", "open", "avoid-clicks", "unmatched");
         enable();
         cardList = [];
     }, 1100);
@@ -169,6 +171,9 @@ function startGame() {
     $('.deck').html(shuffle(cards));
     // remove all existing classes from each card
     $('.card').removeClass("match");
+    $('.card').removeClass("show");
+    $('.card').removeClass("avoid-clicks");
+
     moves = 0;
     $('.moves').html(moves);
 
@@ -215,8 +220,12 @@ function closeModal() {
 }
 
 closeicon2.addEventListener("click", function (e) {
-    modal2.removeClass("show");
-    startGame();
+    if (userName.value.length > 1) {
+        closeuserModal();
+        startGame();
+    } else {
+        $('.error').html('Please enter your name');
+    }
 });
 function closeuserModal() {
     modal2.removeClass("show");
@@ -224,11 +233,17 @@ function closeuserModal() {
     console.log(userName.value);
     startGame();
 }
+$('.play-again').on('click', function () {
+    if (userName.value.length > 1) {
+        closeuserModal();
+    }
+});
 
 // @desciption for user to play Again 
 function playAgain() {
-    modal.removeClass("show");
     startGame();
+    modal.removeClass("show");
+    shuffle(array);
 }
 function shownow() {
     let url = 'https://api.adenleabiodun.com/api/v2/mgusers/_table/Score?api_key=2f59dfe705aafc17a07f1dfeab9198fe2bac90f61dd79732d7ff25b1a5d9d2c7';
@@ -256,11 +271,11 @@ function writenow() {
     let newMoves = $('#userAge').val();
     let date = Date();
     let url1 = 'https://api.adenleabiodun.com/api/v2/mgusers/_table/Score?api_key=2f59dfe705aafc17a07f1dfeab9198fe2bac90f61dd79732d7ff25b1a5d9d2c7'
-    var addingNewUser = { 
-        "resource":[{
-        "name": newName,
-        "moves": moves,
-        "time": date,
+    var addingNewUser = {
+        "resource": [{
+            "name": newName,
+            "moves": moves,
+            "time": date,
         }]
     };
 

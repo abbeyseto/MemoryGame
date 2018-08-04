@@ -21,6 +21,9 @@
     text-align: center;
 	margin: 0 auto;
 }
+.error{
+	color:red;
+}
 
 #top > p{
     width: 100%;
@@ -32,7 +35,9 @@
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
-
+.intro{
+	margin: 0;
+}
 .container {
     display: flex;
     justify-content: center;
@@ -115,7 +120,6 @@
 /*
  * Styles for the Score Panel
  */
-
 
 .score-panel {
     text-align: center;
@@ -200,7 +204,9 @@
 	text-align: center;
 	font-size: 3.5vh;
 }
-
+.avoid-clicks {
+  pointer-events: none;
+}
 .show {
 	visibility: visible !important;
 	opacity: 100 !important;
@@ -240,8 +246,7 @@
     padding: 20px;
     background: #ffffff;
     border-radius: 5px;
-    width: 90%;
-    height: 70%;
+    width: 50%;
     position: relative;
     transition: all 5s ease-in-out;
     font-family: 'Gloria Hallelujah', cursive;
@@ -269,15 +274,13 @@
 }
 
 #popup2 .content-1, .content-2 {
-    max-height: 35%;
     overflow: auto;
     text-align: center;
     font-size: 2.5vh;
 }
 #userName{
-    font-size: 70px;
-    margin: 10px;
-    width: 70%;
+    font-size: 40px;
+    width: 80%;
     border: 1px solid grey;
 }
 #leadboard{
@@ -379,4 +382,25 @@ tr:nth-child(even) {
 	to {
 		transform: scale3d(1, 1, 1);
 	}
+}
+@media only screen and (min-width: 900px) {
+    .deck {
+    width: 55%;
+    height: 50vw;
+    }
+	.deck .card {
+    height: 10vw;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+.deck {
+    width: 95%;
+}
+#leadboard {
+    width: 95%;
+}
+#popup2 {
+    width: 80%;
+}
 }
