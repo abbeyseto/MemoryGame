@@ -24,10 +24,10 @@ Have fun with the Game!
 The project was built with HTML and CSS styling to display a static version of the Memory Game project. This was then converted to an interactive one with jQuery. 
 Its dependencies includes:
 * [jQuery Plugin](https://jquery.com/) - A JavaScript Plugin
-* [Font Awesome] (https://fontawesome.com/) - An icons collection
-* [Google Fonts] (https://fonts.google.com/) - Making the web more beautiful, fast, and open through great typography.
+* [Font Awesome](https://fontawesome.com/) - An icons collection
+* [Google Fonts](https://fonts.google.com/) - Making the web more beautiful, fast, and open through great typography.
 * [NodeJS](https://nodejs.org/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
-* [MongoDB] (https://www.mongodb.com/) - A noSQL database
+* [MongoDB](https://www.mongodb.com/) - A noSQL database
 
 The game is powered by a REST API at the backend to store user details which is shown in the Score Board. Ajax request are made from the API to display the Score Board, while request are sent to the backend API to store the users moves after the 16 cards have been matched.
 
