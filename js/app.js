@@ -173,7 +173,9 @@ function startGame() {
     $('.card').removeClass("match");
     $('.card').removeClass("show");
     $('.card').removeClass("avoid-clicks");
-
+    $('.card').removeClass('open');
+    cardsMatched = 0;
+    cardList=[];
     moves = 0;
     $('.moves').html(moves);
 
