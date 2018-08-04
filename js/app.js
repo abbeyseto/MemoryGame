@@ -20,7 +20,7 @@ $(document).ready(function () {
 })
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -84,7 +84,7 @@ function disable() {
 function enable() {
     Array.prototype.filter.call(cards, function (card) {
         card.classList.remove('disabled');
-        for (var i = 0; i < matchedCard.length; i++) {
+        for (let i = 0; i < matchedCard.length; i++) {
             matchedCard[i].classList.add("disabled");
         }
     });
@@ -121,9 +121,9 @@ function unmatched() {
 *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
 */
 //game timer
-var second = 0, minute = 0;
-var timer = $(".timer");
-var interval;
+let second = 0, minute = 0;
+let timer = $(".timer");
+let interval;
 function startTimer() {
     interval = setInterval(function () {
         timer.html(minute + "mins " + second + "secs");
@@ -178,7 +178,7 @@ function startGame() {
     $('.moves').html(moves);
 
     // reset star rating
-    for (var i = 0; i < stars.length; i++) {
+    for (let i = 0; i < stars.length; i++) {
         stars[i].style.visibility = "visible";
     }
     //reset timer
@@ -199,7 +199,7 @@ function congratulations() {
     modal.addClass("show");
 
     // declare star rating variable
-    var starRating = document.querySelector(".stars").innerHTML;
+    let starRating = document.querySelector(".stars").innerHTML;
 
     //showing move, rating, time on modal
     document.getElementById("finalMove").innerHTML = moves;
@@ -271,7 +271,7 @@ function writenow() {
     let newMoves = $('#userAge').val();
     let date = Date();
     let url1 = 'https://api.adenleabiodun.com/api/v2/mgusers/_table/Score?api_key=2f59dfe705aafc17a07f1dfeab9198fe2bac90f61dd79732d7ff25b1a5d9d2c7'
-    var addingNewUser = {
+    let addingNewUser = {
         "resource": [{
             "name": newName,
             "moves": moves,
