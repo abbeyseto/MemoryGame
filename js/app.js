@@ -248,7 +248,7 @@ function playAgain() {
     shuffle(array);
 }
 function shownow() {
-    let url = 'https://api.adenleabiodun.com/api/v2/mgusers/_table/Score?api_key=2f59dfe705aafc17a07f1dfeab9198fe2bac90f61dd79732d7ff25b1a5d9d2c7';
+    let url = 'https://api.adenleabiodun.com/api/v2/mgusers/_table/Score?api_key=2f59dfe705aafc17a07f1dfeab9198fe2bac90f61dd79732d7ff25b1a5d9d2c7&fields=*&order=moves';
     $.ajax({
         url: url,
         method: 'GET',
