@@ -225,7 +225,9 @@ closeicon2.addEventListener("click", function (e) {
     if (userName.value.length > 1) {
         closeuserModal();
         startGame();
-    } else {
+    } else if(userName.value === ""){
+        $('.error').html('i can\'t detect a name, your input is empty');
+    }else {
         $('.error').html('Please enter your name');
     }
 });
