@@ -240,6 +240,11 @@ function closeuserModal() {
 $('.play-again').on('click', function () {
     if (userName.value.length > 1) {
         closeuserModal();
+        startGame();
+     } else if(userName.value === ""){
+        $('.error').html('i can\'t detect a name, your input is empty');
+    }else {
+        $('.error').html('Please enter your name');
     }
 });
 
