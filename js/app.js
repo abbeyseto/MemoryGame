@@ -222,13 +222,13 @@ function closeModal() {
 }
 
 closeicon2.addEventListener("click", function (e) {
-    if (userName.value.length > 1) {
+    if (userName.value.trim().length > 1) {
         closeuserModal();
         startGame();
-    } else if(userName.value === ""){
+    } else if(userName.value === "" || userName.value.trim().length == 0){
         $('.error').html('i can\'t detect a name, your input is empty');
     }else {
-        $('.error').html('Please enter your name');
+        $('.error').html('Your name can\'t be one character');
     }
 });
 function closeuserModal() {
@@ -238,13 +238,13 @@ function closeuserModal() {
     startGame();
 }
 $('.play-again').on('click', function () {
-    if (userName.value.length > 1) {
+    if (userName.value.trim().length > 1) {
         closeuserModal();
         startGame();
-     } else if(userName.value === ""){
+     } else if(userName.value === "" || userName.value.trim().length ===0){
         $('.error').html('i can\'t detect a name, your input is empty');
     }else {
-        $('.error').html('Please enter your name');
+        $('.error').html('Your name can\'t be one character');
     }
 });
 
