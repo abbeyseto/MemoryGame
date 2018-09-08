@@ -232,9 +232,9 @@ closeicon2.addEventListener("click", function (e) {
     }
 });
 function closeuserModal() {
-    modal2.removeClass("show");
     $('#title').html("Welcome " + userName.value);
     console.log(userName.value);
+    modal2.removeClass("show");
     startGame();
 }
 $('.play-again').on('click', function () {
