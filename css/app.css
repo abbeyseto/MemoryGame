@@ -55,7 +55,7 @@
  * Styles for the deck of cards
  */
 .deck {
-    width: 76%;
+    width: 80%;
     height: 88vw;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
@@ -65,7 +65,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 3em;
+    margin: 25px auto 65px auto;
 }
 
 .deck .card {
