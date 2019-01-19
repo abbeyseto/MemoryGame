@@ -225,7 +225,7 @@ closeicon2.addEventListener("click", function (e) {
     if (userName.value.trim().length > 1) {
         closeuserModal();
         startGame();
-    } else if(userName.value === "" || userName.value.trim().length == 0){
+    } else if(userName.value === null || userName.value.trim().length == 0){
         $('.error').html('i can\'t detect a name, your input is empty');
     }else {
         $('.error').html('Your name can\'t be one character');
